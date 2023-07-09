@@ -1,7 +1,8 @@
 var apiKey = "533313cc880a2148c77843e769ec1a97";
 const apiRoot = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US%7Cen&with_original_language=en&api_key=${apiKey}`
 const query = getQuery()
-var genreId = query.id;
+var searchParramsArr= window.location.search.split('=')
+var genreId = searchParramsArr.pop();
 let pageNo = Number(query.page || 1)
 getQuery()
 const resultContentDiv = document.querySelector('#result-content')
